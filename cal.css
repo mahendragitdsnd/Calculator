@@ -1,0 +1,31 @@
+table {
+    border: 30px solid rgb(44, 146, 242);
+    margin: auto;
+    overflow: hidden;
+    border-radius: 20px;
+    background-color: rgb(44, 146, 242);
+}
+
+input[type="button"] {
+    width: 77%;
+    padding: 6px;
+    background-color: rgba(7, 67, 99, 0.221);
+    font-size: 50px;
+    color: white;
+    font-weight: 500;
+    text-align: center;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+input[type="text"] {
+    padding: 20px 10px;
+    font-size: 30px;
+    font-weight: lighter;
+    text-align: right;
+    border: none;
+}
+
+.zero {
+    width: calc(100% - 24px);
+}
