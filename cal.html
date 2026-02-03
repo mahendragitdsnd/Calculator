@@ -1,101 +1,60 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Calculator</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.6.4/math.js" integrity="sha512-BbVEDjbqdN3Eow8+empLMrJlxXRj5nEitiCAK5A1pUr66+jLVejo3PmjIaucRnjlB0P9R3rBUs3g5jXc8ti+fQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.6.4/math.min.js" integrity="sha512-iphNRh6dPbeuPGIrQbCdbBF/qcqadKWLa35YPVfMZMHBSI6PLJh1om2xCTWhpVpmUyb4IvVS9iYnnYMkleVXLA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <style>
-        table {
-            border: 30px solid rgb(44, 146, 242);
-            margin-left: auto;
-            margin-right: auto;
-            overflow: hidden;
-            border-radius: 20px; 
-            background-color:rgb(44, 146, 242);
-        }
-        input[type="button"] {
-            width: 77%;
-            padding: 6px 6px;
-            background-color: rgba(7, 67, 99, 0.221);
-            font-size: 10px;
-            color: white;
-            font-size: 50px;
-            font-weight: Medium;
-            text-align: center;
-            border-radius: 15px;
-        }
-        input[type="text"] {
-            padding: 20px 10px;
-            font-size: 30px;
-            font-weight: lighter;
-            border: rgb(61, 164, 220);
-            border-radius: 1px;
-            border: 10px solid red(243, 247, 250);
-            text-align: right;
-        }
-    </style>
+
+    <!-- Math.js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.6.4/math.min.js"
+            integrity="sha512-iphNRh6dPbeuPGIrQbCdbBF/qcqadKWLa35YPVfMZMHBSI6PLJh1om2xCTWhpVpmUyb4IvVS9iYnnYMkleVXLA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <table id="calcu">
-        <tr>
-            <td colspan="4">
-                <input type="text" id="result" value="0" readonly>
-            </td>
-        </tr>
-        <tr>
-            <td><input type="button" value="/" onclick="Solve('/')"></td>
-            <td><input type="button" value="*" onclick="Solve('*')"></td>
-            <td><input type="button" value="." onclick="Solve('.')"></td>
-            <td><input type="button" value="C" onclick="Clear()"></td>
-        </tr>
-        <tr>
-            <td><input type="button" value="7" onclick="Solve('7')"></td>
-            <td><input type="button" value="8" onclick="Solve('8')"></td>
-            <td><input type="button" value="9" onclick="Solve('9')"></td>
-            <td><input type="button" value="+" onclick="Solve('+')"></td>
-        </tr>
-        <tr>
-            <td><input type="button" value="4" onclick="Solve('4')"></td>
-            <td><input type="button" value="5" onclick="Solve('5')"></td>
-            <td><input type="button" value="6" onclick="Solve('6')"></td>
-            <td><input type="button" value="-" onclick="Solve('-')"></td>
-        </tr>
-        <tr>
-            <td><input type="button" value="1" onclick="Solve('1')"></td>
-            <td><input type="button" value="2" onclick="Solve('2')"></td>
-            <td><input type="button" value="3" onclick="Solve('3')"></td>
-            <td><input type="button" value="=" onclick="Result()"></td>
-        </tr>
-        <tr>
-            <td colspan="4">
-                <input type="button" value="0" onclick="Solve('0')" style="width: calc(100% - 24px);">
-            </td>
-        </tr>
-    </table>
-    <script>
-        function Solve(val) {
-            var v = document.getElementById('result');
-            if (v.value === '0' && val !== '.') {
-                v.value = val;
-            } else {
-                v.value += val;
-            }
-        }
 
-        function Result() {
-            var input = document.getElementById('result').value;
-            var result;
-            try {
-                result = math.evaluate(input);
-            } catch (error) {
-                result = 'Error';
-            }
-            document.getElementById('result').value = result;
-        }
+<table id="calcu">
+    <tr>
+        <td colspan="4">
+            <input type="text" id="result" value="0" readonly>
+        </td>
+    </tr>
 
-        function Clear() {
-            document.getElementById('result').value = '0';
-        }
-    </script>
+    <tr>
+        <td><input type="button" value="/" onclick="Solve('/')"></td>
+        <td><input type="button" value="*" onclick="Solve('*')"></td>
+        <td><input type="button" value="." onclick="Solve('.')"></td>
+        <td><input type="button" value="C" onclick="Clear()"></td>
+    </tr>
+
+    <tr>
+        <td><input type="button" value="7" onclick="Solve('7')"></td>
+        <td><input type="button" value="8" onclick="Solve('8')"></td>
+        <td><input type="button" value="9" onclick="Solve('9')"></td>
+        <td><input type="button" value="+" onclick="Solve('+')"></td>
+    </tr>
+
+    <tr>
+        <td><input type="button" value="4" onclick="Solve('4')"></td>
+        <td><input type="button" value="5" onclick="Solve('5')"></td>
+        <td><input type="button" value="6" onclick="Solve('6')"></td>
+        <td><input type="button" value="-" onclick="Solve('-')"></td>
+    </tr>
+
+    <tr>
+        <td><input type="button" value="1" onclick="Solve('1')"></td>
+        <td><input type="button" value="2" onclick="Solve('2')"></td>
+        <td><input type="button" value="3" onclick="Solve('3')"></td>
+        <td><input type="button" value="=" onclick="Result()"></td>
+    </tr>
+
+    <tr>
+        <td colspan="4">
+            <input type="button" value="0" onclick="Solve('0')" class="zero">
+        </td>
+    </tr>
+</table>
+
+<script src="script.js"></script>
 </body>
 </html>
